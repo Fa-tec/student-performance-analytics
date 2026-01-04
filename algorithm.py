@@ -5,10 +5,13 @@ def identify_weak_areas(marks, threshold=50):
     status = []
 
     for i in range(len(marks)):
-        if marks[i] < threshold:
+                if marks[i] < threshold:
             status.append("Weak")
             weak_count += 1
+        elif marks[i] == threshold:
+            status.append("Borderline")
         else:
             status.append("Satisfactory")
+
 
     return status, weak_count
